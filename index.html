@@ -5,262 +5,217 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="6qcwYwzA6RaAwLVA6G3HBTprB8Bdw4A16uZCF5e9Ar8" />
 <title>12 Years of Transformative Governance — Quiz</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--bg:#0a0a0f;--bg2:#0d1117;--bg3:#131922;--card:rgba(13,17,23,.75);--saffron:#FF9933;--saffron-dim:rgba(255,153,51,.15);--cyan:#00d4ff;--cyan-dim:rgba(0,212,255,.12);--green:#138808;--green-dim:rgba(19,136,8,.15);--white:#e6edf3;--muted:#8b949e;--dim:#484f58;--danger:#f85149;--success:#3fb950;--radius:14px;--radius-sm:8px;--radius-lg:20px;--font-d:'Rajdhani',sans-serif;--font-u:'Outfit',sans-serif;--tr:.3s cubic-bezier(.4,0,.2,1)}
+:root{--bg:#0a0a0f;--bg2:#0d1117;--bg3:#131922;--card:rgba(13,17,23,.8);--saffron:#FF9933;--saffron-dim:rgba(255,153,51,.12);--cyan:#00d4ff;--cyan-dim:rgba(0,212,255,.1);--green:#138808;--green-dim:rgba(19,136,8,.12);--white:#e6edf3;--muted:#8b949e;--dim:#484f58;--danger:#f85149;--success:#3fb950;--radius:12px;--font-d:'Rajdhani',sans-serif;--font-u:'Outfit',sans-serif;--tr:.3s cubic-bezier(.4,0,.2,1)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-u);background:var(--bg);color:var(--white);overflow-x:hidden;min-height:100vh}
-body.light{--bg:#f0f2f5;--bg2:#e8eaed;--bg3:#dde0e4;--card:rgba(255,255,255,.85);--white:#1a1a2e;--muted:#555;--dim:#999}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:3px}
-a{color:var(--cyan);text-decoration:none}button{cursor:pointer;font-family:var(--font-u);border:none;outline:none;background:none;color:var(--white)}input{font-family:var(--font-u);outline:none;border:none}
-#loading-screen{position:fixed;inset:0;z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);transition:opacity .8s,visibility .8s}
-#loading-screen.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.loader-ring{width:70px;height:70px;border-radius:50%;border:3px solid var(--bg3);border-top-color:var(--saffron);border-right-color:var(--cyan);animation:spin 1s linear infinite}
+body.light{--bg:#f0f2f5;--bg2:#e8eaed;--bg3:#dde0e4;--card:rgba(255,255,255,.88);--white:#1a1a2e;--muted:#555;--dim:#999}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:3px}
+button{cursor:pointer;font-family:var(--font-u);border:none;outline:none;background:none;color:var(--white)}
+#load-screen{position:fixed;inset:0;z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);transition:opacity .6s,visibility .6s}
+#load-screen.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.spin-ring{width:60px;height:60px;border-radius:50%;border:3px solid var(--bg3);border-top-color:var(--saffron);border-right-color:var(--cyan);animation:spin .9s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.loader-text{margin-top:20px;font-family:var(--font-d);font-size:1.2rem;font-weight:600;background:linear-gradient(90deg,var(--saffron),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:pulse 1.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
-#particles-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
-#india-map{position:fixed;bottom:-10%;right:-5%;width:500px;height:500px;opacity:.03;z-index:0;pointer-events:none;animation:floatm 20s ease-in-out infinite}
-@keyframes floatm{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
-#confetti-canvas{position:fixed;inset:0;z-index:8000;pointer-events:none}
-.screen{display:none;position:relative;z-index:1;min-height:100vh}.screen.active{display:block;animation:fadeUp .5s ease}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-#main-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,153,51,.08);transition:var(--tr)}
-body.light #main-nav{background:rgba(240,242,245,.92)}
-.nav-brand{font-family:var(--font-d);font-size:1.2rem;font-weight:700;background:linear-gradient(135deg,var(--saffron),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer}
-.nav-links{display:flex;gap:6px;align-items:center}
-.nav-btn{padding:7px 12px;border-radius:var(--radius-sm);font-size:.82rem;font-weight:500;transition:var(--tr);color:var(--muted)}
-.nav-btn:hover,.nav-btn.active{color:var(--saffron);background:var(--saffron-dim)}
-.nav-btn i{margin-right:3px}
-.icon-btn{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:var(--tr);color:var(--muted);font-size:.95rem}
-.icon-btn:hover{color:var(--saffron);background:var(--saffron-dim)}
-.hamburger{display:none;flex-direction:column;gap:4px;padding:8px}.hamburger span{width:20px;height:2px;background:var(--white);border-radius:2px;transition:var(--tr)}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 20px 50px;position:relative}
-.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(255,153,51,.08) 0%,transparent 70%);pointer-events:none}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--saffron);border:1px solid rgba(255,153,51,.3);background:var(--saffron-dim);margin-bottom:20px}
-.hero-title{font-family:var(--font-d);font-size:clamp(2.2rem,6vw,4.5rem);font-weight:700;line-height:1.1;margin-bottom:14px}
-.hero-title .hl{background:linear-gradient(135deg,var(--saffron),#ff6b35,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{max-width:650px;font-size:clamp(.9rem,1.8vw,1.1rem);line-height:1.7;color:var(--muted);margin-bottom:14px}
-#typing-text{color:var(--cyan);border-right:2px solid var(--cyan);padding-right:4px;animation:blink .8s step-end infinite;display:inline-block}
-@keyframes blink{from,to{border-color:transparent}50%{border-color:var(--cyan)}}
-.counters-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:650px;width:100%;margin-bottom:36px}
-.counter-card{text-align:center;padding:20px 10px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.04);transition:var(--tr)}
-.counter-card:hover{border-color:rgba(255,153,51,.2);transform:translateY(-3px)}
-.counter-num{font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--saffron)}
-.counter-label{font-size:.75rem;color:var(--muted);margin-top:3px;font-weight:500}
-.cta-group{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
-.btn-p{padding:12px 28px;border-radius:50px;font-size:.95rem;font-weight:600;background:linear-gradient(135deg,var(--saffron),#ff6b35);color:#fff;transition:var(--tr);box-shadow:0 4px 20px rgba(255,153,51,.3)}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,153,51,.5)}
-.btn-s{padding:12px 28px;border-radius:50px;font-size:.95rem;font-weight:600;border:1px solid rgba(0,212,255,.4);color:var(--cyan);background:var(--cyan-dim);transition:var(--tr)}
-.btn-s:hover{background:rgba(0,212,255,.2);transform:translateY(-2px)}
-.btn-sm{padding:8px 18px;font-size:.82rem;border-radius:var(--radius-sm)}
-.btn-xs{padding:5px 12px;font-size:.75rem;border-radius:var(--radius-sm)}
-.portal-section{max-width:600px;width:100%;margin:0 auto 30px}
-.portal-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 24px;border-radius:var(--radius);font-size:1rem;font-weight:700;background:linear-gradient(135deg,rgba(255,153,51,.12),rgba(0,212,255,.08));border:1px solid rgba(255,153,51,.35);color:var(--saffron);transition:var(--tr);animation:glowp 3s ease-in-out infinite}
-@keyframes glowp{0%,100%{box-shadow:0 0 15px rgba(255,153,51,.15)}50%{box-shadow:0 0 35px rgba(255,153,51,.35)}}
-.portal-btn:hover{transform:translateY(-2px)}
-.portal-desc{font-size:.8rem;color:var(--muted);line-height:1.6;text-align:center;margin-top:12px;font-style:italic}
-.ticker-wrap{width:100%;overflow:hidden;padding:12px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);margin-top:16px}
-.ticker{display:flex;gap:50px;animation:scrollt 40s linear infinite;white-space:nowrap}
-.ticker span{font-size:.82rem;color:var(--muted);font-weight:500}.ticker span i{color:var(--saffron);margin-right:6px}
-@keyframes scrollt{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.float-cards{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;pointer-events:none;overflow:hidden}
-.float-card{position:absolute;padding:8px 14px;border-radius:8px;background:var(--card);border:1px solid rgba(255,153,51,.1);font-size:.72rem;color:var(--muted);animation:floatd 8s ease-in-out infinite;white-space:nowrap}
-.float-card:nth-child(1){top:15%;left:5%;animation-delay:0s}.float-card:nth-child(2){top:25%;right:8%;animation-delay:2s}
-.float-card:nth-child(3){bottom:30%;left:8%;animation-delay:4s}.float-card:nth-child(4){bottom:20%;right:5%;animation-delay:6s}
-.float-card:nth-child(5){top:45%;left:3%;animation-delay:1s}.float-card:nth-child(6){top:60%;right:4%;animation-delay:3s}
-@keyframes floatd{0%,100%{transform:translateY(0)}25%{transform:translateY(-10px)}75%{transform:translateY(8px)}}
-.dashboard{padding:80px 20px 50px;max-width:1100px;margin:0 auto}
-.section-title{font-family:var(--font-d);font-size:clamp(1.4rem,3.5vw,2.2rem);font-weight:700;margin-bottom:6px}
-.section-desc{color:var(--muted);font-size:.9rem;margin-bottom:24px}
-.dash-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:24px}
-.search-bar{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:50px;background:var(--card);border:1px solid rgba(255,255,255,.06);min-width:240px;transition:var(--tr)}
-.search-bar:focus-within{border-color:rgba(255,153,51,.3)}.search-bar input{background:none;color:var(--white);font-size:.85rem;width:100%}.search-bar i{color:var(--muted)}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:32px}
-.cat-card{padding:20px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.04);cursor:pointer;transition:var(--tr);position:relative;overflow:hidden}
-.cat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--saffron),var(--cyan));opacity:0;transition:var(--tr)}
-.cat-card:hover{border-color:rgba(255,153,51,.2);transform:translateY(-3px)}.cat-card:hover::before{opacity:1}
-.cat-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:12px}
-.cat-name{font-family:var(--font-d);font-size:1.05rem;font-weight:600;margin-bottom:4px}
-.cat-count{font-size:.78rem;color:var(--muted)}
-.cat-progress{margin-top:10px;height:4px;border-radius:2px;background:var(--bg3);overflow:hidden}
-.cat-progress-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--saffron),var(--cyan));transition:width .8s ease}
-.scst-section{margin-top:40px;padding:32px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(19,136,8,.08),rgba(255,153,51,.06));border:1px solid rgba(19,136,8,.2);position:relative;overflow:hidden}
-.scst-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:50px;font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--success);border:1px solid rgba(19,136,8,.3);background:var(--green-dim);margin-bottom:14px}
-.scst-title{font-family:var(--font-d);font-size:1.6rem;font-weight:700;margin-bottom:10px}
-.scst-desc{color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:20px;max-width:650px}
-.scst-schemes{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-.scst-scheme{padding:12px 14px;border-radius:8px;background:rgba(10,10,15,.5);border:1px solid rgba(255,255,255,.04);font-size:.82rem;transition:var(--tr);cursor:default}
-.scst-scheme:hover{border-color:rgba(19,136,8,.3);background:rgba(19,136,8,.08)}.scst-scheme i{color:var(--success);margin-right:6px;font-size:.7rem}
-.quiz-screen{padding:80px 20px 50px;max-width:750px;margin:0 auto}
-.quiz-top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px}
-.quiz-info{display:flex;align-items:center;gap:14px}.quiz-info-item{display:flex;align-items:center;gap:5px;font-size:.82rem;color:var(--muted)}.quiz-info-item .val{color:var(--white);font-weight:600}
-.quiz-timer{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--cyan)}.quiz-timer.warning{color:var(--danger);animation:pulse .5s infinite}
-.quiz-progress-bar{width:100%;height:5px;border-radius:3px;background:var(--bg3);margin-bottom:28px;overflow:hidden}
-.quiz-progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--saffron),var(--cyan));transition:width .5s ease}
-.q-card{padding:28px;border-radius:var(--radius-lg);background:var(--card);border:1px solid rgba(255,255,255,.06);margin-bottom:20px}
-.q-number{font-size:.75rem;font-weight:600;color:var(--saffron);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
-.q-text{font-size:1.08rem;font-weight:500;line-height:1.6;margin-bottom:24px}
-.q-category-tag{display:inline-block;padding:3px 10px;border-radius:50px;font-size:.7rem;font-weight:600;margin-bottom:14px}
-.options-list{display:flex;flex-direction:column;gap:10px}
-.option-btn{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:var(--radius);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);cursor:pointer;transition:var(--tr);text-align:left;font-size:.9rem;color:var(--white)}
-.option-btn:hover:not(.disabled){border-color:rgba(255,153,51,.3);background:var(--saffron-dim)}
-.opt-letter{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;background:rgba(255,255,255,.06);color:var(--muted);flex-shrink:0;transition:var(--tr)}
-.option-btn:hover:not(.disabled) .opt-letter{background:var(--saffron-dim);color:var(--saffron)}
-.option-btn.correct{border-color:var(--success);background:rgba(63,185,80,.1)}.option-btn.correct .opt-letter{background:var(--success);color:#fff}
-.option-btn.wrong{border-color:var(--danger);background:rgba(248,81,73,.1)}.option-btn.wrong .opt-letter{background:var(--danger);color:#fff}
-.option-btn.disabled{pointer-events:none;opacity:.6}.option-btn.correct.disabled,.option-btn.wrong.disabled{opacity:1}
-.explanation{margin-top:18px;padding:16px;border-radius:8px;background:rgba(0,212,255,.05);border-left:3px solid var(--cyan);font-size:.84rem;line-height:1.7;color:var(--muted);display:none}
-.explanation.show{display:block;animation:fadeUp .4s ease}.explanation strong{color:var(--cyan)}
-.quiz-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.bookmark-btn{padding:8px 14px;border-radius:8px;font-size:.82rem;color:var(--muted);transition:var(--tr)}
-.bookmark-btn:hover,.bookmark-btn.active{color:var(--saffron);background:var(--saffron-dim)}
-.results-screen{padding:80px 20px 50px;max-width:750px;margin:0 auto;text-align:center}
-.results-card{padding:40px 28px;border-radius:var(--radius-lg);background:var(--card);border:1px solid rgba(255,255,255,.06);margin-bottom:28px}
-.score-circle{width:160px;height:160px;margin:0 auto 28px;position:relative}
-.score-circle svg{width:100%;height:100%;transform:rotate(-90deg)}.score-circle circle{fill:none;stroke-width:8}
-.score-circle .bg{stroke:var(--bg3)}.score-circle .fg{stroke:var(--saffron);stroke-linecap:round;transition:stroke-dashoffset 1.5s ease}
-.score-circle .score-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
-.score-circle .score-num{font-family:var(--font-d);font-size:2.5rem;font-weight:700;color:var(--saffron)}
-.score-circle .score-label{font-size:.75rem;color:var(--muted)}
-.results-title{font-family:var(--font-d);font-size:1.6rem;font-weight:700;margin-bottom:6px}
-.results-subtitle{color:var(--muted);font-size:.9rem;margin-bottom:24px}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
-.stat-item{padding:14px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.04)}
-.stat-val{font-family:var(--font-d);font-size:1.5rem;font-weight:700}.stat-label{font-size:.75rem;color:var(--muted);margin-top:3px}
-.results-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.badges-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0}
-.badge{padding:6px 16px;border-radius:50px;font-size:.78rem;font-weight:600;display:flex;align-items:center;gap:5px;border:1px solid}
-.badge-gold{color:#ffd700;border-color:rgba(255,215,0,.3);background:rgba(255,215,0,.08)}
-.badge-streak{color:var(--cyan);border-color:rgba(0,212,255,.3);background:var(--cyan-dim)}
-.review-screen,.bookmarks-screen,.leaderboard-screen,.certificate-screen{padding:80px 20px 50px;max-width:750px;margin:0 auto}
-.review-item{padding:20px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.04);margin-bottom:14px}
-.review-q{font-weight:500;margin-bottom:10px;line-height:1.5}.review-answer{font-size:.85rem;margin-bottom:3px}
-.review-expl{font-size:.8rem;color:var(--muted);line-height:1.5;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.04)}
-.lb-row{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:8px;background:var(--card);border:1px solid rgba(255,255,255,.04);margin-bottom:8px;transition:var(--tr)}
-.lb-row:hover{border-color:rgba(255,153,51,.2)}
-.lb-rank{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;background:var(--bg3);flex-shrink:0}
+.load-txt{margin-top:16px;font-family:var(--font-d);font-size:1.1rem;font-weight:600;background:linear-gradient(90deg,var(--saffron),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+canvas#bg-c{position:fixed;inset:0;z-index:0;pointer-events:none}
+.screen{display:none;position:relative;z-index:1;min-height:100vh}.screen.active{display:block;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,153,51,.06)}
+body.light nav{background:rgba(240,242,245,.92)}
+.nav-brand{font-family:var(--font-d);font-size:1.15rem;font-weight:700;background:linear-gradient(135deg,var(--saffron),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nb{padding:6px 11px;border-radius:6px;font-size:.78rem;font-weight:500;transition:var(--tr);color:var(--muted)}
+.nb:hover,.nb.active{color:var(--saffron);background:var(--saffron-dim)}
+.ib{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:var(--tr);color:var(--muted);font-size:.9rem}
+.ib:hover{color:var(--saffron);background:var(--saffron-dim)}
+.hamburger{display:none;flex-direction:column;gap:4px;padding:8px}.hamburger span{width:18px;height:2px;background:var(--white);border-radius:2px;transition:var(--tr)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 18px 40px;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,153,51,.07) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:50px;font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--saffron);border:1px solid rgba(255,153,51,.25);background:var(--saffron-dim);margin-bottom:18px}
+.hero-title{font-family:var(--font-d);font-size:clamp(2rem,5.5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:12px}
+.hl{background:linear-gradient(135deg,var(--saffron),#ff6b35,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{max-width:600px;font-size:.92rem;line-height:1.6;color:var(--muted);margin-bottom:28px}
+.counters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:600px;width:100%;margin-bottom:30px}
+.cc{text-align:center;padding:16px 8px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.04);transition:var(--tr)}
+.cc:hover{border-color:rgba(255,153,51,.18);transform:translateY(-2px)}
+.cc-n{font-family:var(--font-d);font-size:1.8rem;font-weight:700;color:var(--saffron)}.cc-l{font-size:.7rem;color:var(--muted);margin-top:2px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+.btn-p{padding:11px 24px;border-radius:50px;font-size:.9rem;font-weight:600;background:linear-gradient(135deg,var(--saffron),#ff6b35);color:#fff;transition:var(--tr);box-shadow:0 4px 18px rgba(255,153,51,.25)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,153,51,.45)}
+.btn-s{padding:11px 24px;border-radius:50px;font-size:.9rem;font-weight:600;border:1px solid rgba(0,212,255,.35);color:var(--cyan);background:var(--cyan-dim);transition:var(--tr)}
+.btn-s:hover{background:rgba(0,212,255,.18);transform:translateY(-2px)}
+.btn-sm{padding:7px 16px;font-size:.8rem;border-radius:6px}
+.portal-a{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:560px;padding:14px 20px;border-radius:var(--radius);font-size:.92rem;font-weight:700;background:linear-gradient(135deg,rgba(255,153,51,.1),rgba(0,212,255,.06));border:1px solid rgba(255,153,51,.3);color:var(--saffron);transition:var(--tr);text-decoration:none;animation:glowp 3s ease-in-out infinite}
+@keyframes glowp{0%,100%{box-shadow:0 0 12px rgba(255,153,51,.12)}50%{box-shadow:0 0 30px rgba(255,153,51,.3)}}
+.portal-a:hover{transform:translateY(-2px)}
+.portal-desc{font-size:.75rem;color:var(--muted);line-height:1.5;text-align:center;margin-top:10px;max-width:560px;font-style:italic}
+.dash{padding:75px 18px 40px;max-width:1000px;margin:0 auto}
+.stitle{font-family:var(--font-d);font-size:clamp(1.3rem,3vw,2rem);font-weight:700;margin-bottom:4px}
+.sdesc{color:var(--muted);font-size:.85rem;margin-bottom:20px}
+.dash-hd{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.sbar{display:flex;align-items:center;gap:7px;padding:7px 12px;border-radius:50px;background:var(--card);border:1px solid rgba(255,255,255,.05);min-width:220px;transition:var(--tr)}
+.sbar:focus-within{border-color:rgba(255,153,51,.25)}.sbar input{background:none;color:var(--white);font-size:.82rem;width:100%;border:none;outline:none}.sbar i{color:var(--muted)}
+.daily{padding:16px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(255,153,51,.07),rgba(0,212,255,.04));border:1px solid rgba(255,153,51,.12);margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.daily-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:var(--saffron-dim);color:var(--saffron)}
+.daily h4{font-family:var(--font-d);font-size:.95rem;font-weight:600}.daily p{font-size:.72rem;color:var(--muted)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:28px}
+.ccard{padding:18px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.04);cursor:pointer;transition:var(--tr);position:relative;overflow:hidden}
+.ccard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--saffron),var(--cyan));opacity:0;transition:var(--tr)}
+.ccard:hover{border-color:rgba(255,153,51,.18);transform:translateY(-2px)}.ccard:hover::before{opacity:1}
+.ccard-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:10px}
+.ccard-n{font-family:var(--font-d);font-size:1rem;font-weight:600;margin-bottom:3px}.ccard-c{font-size:.72rem;color:var(--muted)}
+.ccard-prog{margin-top:8px;height:3px;border-radius:2px;background:var(--bg3);overflow:hidden}.ccard-prog-f{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--saffron),var(--cyan));transition:width .6s ease}
+.scst{margin-top:32px;padding:28px;border-radius:16px;background:linear-gradient(135deg,rgba(19,136,8,.07),rgba(255,153,51,.05));border:1px solid rgba(19,136,8,.18);position:relative;overflow:hidden}
+.scst-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:50px;font-size:.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--success);border:1px solid rgba(19,136,8,.25);background:var(--green-dim);margin-bottom:12px}
+.scst-title{font-family:var(--font-d);font-size:1.4rem;font-weight:700;margin-bottom:8px}
+.scst-desc{color:var(--muted);font-size:.82rem;line-height:1.5;margin-bottom:16px;max-width:600px}
+.scst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.scst-item{padding:10px 12px;border-radius:6px;background:rgba(10,10,15,.45);border:1px solid rgba(255,255,255,.03);font-size:.78rem;transition:var(--tr);cursor:default}
+.scst-item:hover{border-color:rgba(19,136,8,.25);background:rgba(19,136,8,.06)}.scst-item i{color:var(--success);margin-right:5px;font-size:.65rem}
+.qwrap{padding:75px 18px 40px;max-width:700px;margin:0 auto}
+.qtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.qinfo{display:flex;align-items:center;gap:12px}.qinfo-i{display:flex;align-items:center;gap:4px;font-size:.78rem;color:var(--muted)}.qinfo-i .v{color:var(--white);font-weight:600}
+.qtimer{font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--cyan)}.qtimer.warn{color:var(--danger);animation:pulse .5s infinite}
+.qprog{width:100%;height:4px;border-radius:2px;background:var(--bg3);margin-bottom:22px;overflow:hidden}
+.qprog-f{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--saffron),var(--cyan));transition:width .4s ease}
+.qcard{padding:28px;border-radius:16px;background:var(--card);border:1px solid rgba(255,255,255,.05);margin-bottom:18px;min-height:200px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.qnum{font-size:.7rem;font-weight:600;color:var(--saffron);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.qtext{font-size:1.05rem;font-weight:500;line-height:1.6;margin-bottom:24px}
+.ans-box{padding:18px 24px;border-radius:var(--radius);background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);color:var(--cyan);font-weight:600;font-size:1.1rem;display:none;text-align:center}
+.ans-box.show{display:block;animation:fadeUp .3s ease}
+.qnav{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.bm-btn{padding:7px 12px;border-radius:6px;font-size:.78rem;color:var(--muted);transition:var(--tr)}
+.bm-btn:hover,.bm-btn.active{color:var(--saffron);background:var(--saffron-dim)}
+.rwrap{padding:75px 18px 40px;max-width:700px;margin:0 auto;text-align:center}
+.rcard{padding:36px 24px;border-radius:16px;background:var(--card);border:1px solid rgba(255,255,255,.05);margin-bottom:24px}
+.score-c{width:140px;height:140px;margin:0 auto 24px;position:relative}
+.score-c svg{width:100%;height:100%;transform:rotate(-90deg)}.score-c circle{fill:none;stroke-width:7}
+.score-c .bg{stroke:var(--bg3)}.score-c .fg{stroke:var(--saffron);stroke-linecap:round;transition:stroke-dashoffset 1.2s ease}
+.score-c .st{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.score-c .sn{font-family:var(--font-d);font-size:2.2rem;font-weight:700;color:var(--saffron)}.score-c .sl{font-size:.7rem;color:var(--muted)}
+.r-title{font-family:var(--font-d);font-size:1.4rem;font-weight:700;margin-bottom:4px}.r-sub{color:var(--muted);font-size:.85rem;margin-bottom:20px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.si{padding:12px;border-radius:6px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.03)}
+.si-v{font-family:var(--font-d);font-size:1.3rem;font-weight:700}.si-l{font-size:.7rem;color:var(--muted);margin-top:2px}
+.ract{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.rewrap,.bmwrap,.lbwrap,.certwrap{padding:75px 18px 40px;max-width:700px;margin:0 auto}
+.ritem{padding:16px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.03);margin-bottom:10px}
+.ri-q{font-weight:500;margin-bottom:6px;line-height:1.4;font-size:.9rem}.ri-a{font-size:.82rem;margin-bottom:2px}.ri-a.correct{color:var(--success)}.ri-a.wrong{color:var(--danger)}
+.ri-ans{color:var(--cyan);font-size:.82rem}
+.lb-row{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:6px;background:var(--card);border:1px solid rgba(255,255,255,.03);margin-bottom:6px}
+.lb-rank{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;background:var(--bg3);flex-shrink:0}
 .lb-rank.top{background:linear-gradient(135deg,var(--saffron),#ff6b35);color:#fff}
-.lb-name{flex:1;font-weight:500}.lb-score{font-family:var(--font-d);font-weight:700;color:var(--saffron)}
-.cert-frame{padding:40px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,153,51,.05),rgba(0,212,255,.03));border:2px solid rgba(255,153,51,.2);text-align:center;position:relative}
-.cert-frame::before,.cert-frame::after{content:'';position:absolute;width:36px;height:36px;border:2px solid var(--saffron);opacity:.4}
-.cert-frame::before{top:14px;left:14px;border-right:none;border-bottom:none}
-.cert-frame::after{bottom:14px;right:14px;border-left:none;border-top:none}
-.cert-title{font-family:var(--font-d);font-size:1.5rem;font-weight:700;color:var(--saffron);margin-bottom:8px}
-.cert-body{font-size:.95rem;line-height:1.8;color:var(--muted);margin-bottom:20px}
-.cert-name{font-size:1.3rem;font-weight:700;color:var(--white);margin:10px 0}
-.daily-card{padding:20px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(255,153,51,.08),rgba(0,212,255,.05));border:1px solid rgba(255,153,51,.15);margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.daily-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;background:var(--saffron-dim);color:var(--saffron)}
-.daily-text h4{font-family:var(--font-d);font-size:1rem;font-weight:600}.daily-text p{font-size:.78rem;color:var(--muted)}
-.modal-overlay{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px}
-.modal-overlay.show{display:flex}.modal{width:100%;max-width:460px;padding:28px;border-radius:var(--radius-lg);background:var(--bg2);border:1px solid rgba(255,255,255,.06);max-height:90vh;overflow-y:auto}
-.modal-title{font-family:var(--font-d);font-size:1.3rem;font-weight:700}
-.setting-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.setting-label{font-weight:500;font-size:.88rem}
-.toggle{width:44px;height:24px;border-radius:12px;background:var(--bg3);cursor:pointer;position:relative;transition:var(--tr)}
-.toggle.on{background:var(--saffron)}.toggle::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#fff;transition:var(--tr)}.toggle.on::after{left:22px}
-.diff-btns{display:flex;gap:5px}.diff-btn{padding:5px 12px;border-radius:8px;font-size:.78rem;font-weight:600;background:var(--bg3);color:var(--muted);transition:var(--tr)}
-.diff-btn.active{background:var(--saffron-dim);color:var(--saffron);border:1px solid rgba(255,153,51,.3)}
-.fact-bar{position:fixed;bottom:0;left:0;right:0;z-index:100;padding:10px 20px;background:rgba(13,17,23,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(255,153,51,.1);display:flex;align-items:center;gap:10px;transform:translateY(100%);transition:transform .5s ease}
-.fact-bar.show{transform:translateY(0)}.fact-bar i{color:var(--saffron)}.fact-bar span{font-size:.8rem;color:var(--muted);line-height:1.3}.fact-close{margin-left:auto;color:var(--dim);cursor:pointer;padding:4px 6px}
-footer{padding:32px 20px;text-align:center;border-top:1px solid rgba(255,255,255,.04);position:relative;z-index:1}
-footer p{color:var(--muted);font-size:.82rem}
-footer .creator{font-family:var(--font-d);font-weight:600;font-size:.95rem;background:linear-gradient(90deg,var(--saffron),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:3px}
-.toast{position:fixed;top:75px;left:50%;transform:translateX(-50%);padding:10px 22px;border-radius:8px;background:rgba(255,153,51,.92);color:#fff;font-size:.85rem;font-weight:600;z-index:9999;animation:fadeUp .3s ease}
-.search-results-grid{display:grid;gap:12px}
-.search-result-card{padding:16px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.04)}
-@media(max-width:768px){
-.hamburger{display:flex}.nav-links{position:fixed;top:0;right:-100%;width:250px;height:100vh;background:var(--bg2);flex-direction:column;padding:70px 20px 20px;transition:var(--tr);z-index:999;border-left:1px solid rgba(255,255,255,.06)}
-.nav-links.open{right:0}.nav-links .nav-btn{width:100%;text-align:left;padding:10px 14px}
-.counters-row{grid-template-columns:repeat(2,1fr)}.cat-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr}
-.scst-schemes{grid-template-columns:1fr}.float-cards{display:none}#india-map{width:280px;height:280px;opacity:.02}
-.q-card{padding:18px}.search-bar{min-width:100%}.dash-header{flex-direction:column}
-}
-@media(max-width:400px){.counters-row{gap:10px}.counter-num{font-size:1.5rem}.cta-group{flex-direction:column;width:100%}.cta-group button{width:100%}}
+.lb-name{flex:1;font-weight:500;font-size:.88rem}.lb-sc{font-family:var(--font-d);font-weight:700;color:var(--saffron)}
+.cert-f{padding:36px;border-radius:16px;background:linear-gradient(135deg,rgba(255,153,51,.04),rgba(0,212,255,.02));border:2px solid rgba(255,153,51,.18);text-align:center;position:relative}
+.cert-f::before,.cert-f::after{content:'';position:absolute;width:30px;height:30px;border:2px solid var(--saffron);opacity:.35}
+.cert-f::before{top:12px;left:12px;border-right:none;border-bottom:none}.cert-f::after{bottom:12px;right:12px;border-left:none;border-top:none}
+.cert-t{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--saffron);margin-bottom:6px}
+.cert-b{font-size:.88rem;line-height:1.7;color:var(--muted);margin-bottom:16px}.cert-n{font-size:1.2rem;font-weight:700;color:var(--white);margin:8px 0}
+.modal-ov{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:18px}
+.modal-ov.show{display:flex}.modal{width:100%;max-width:420px;padding:24px;border-radius:16px;background:var(--bg2);border:1px solid rgba(255,255,255,.05);max-height:90vh;overflow-y:auto}
+.modal-t{font-family:var(--font-d);font-size:1.2rem;font-weight:700}
+.srow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.srow-l{font-weight:500;font-size:.85rem}
+.tog{width:40px;height:22px;border-radius:11px;background:var(--bg3);cursor:pointer;position:relative;transition:var(--tr)}
+.tog.on{background:var(--saffron)}.tog::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:var(--tr)}.tog.on::after{left:20px}
+.dbtns{display:flex;gap:4px}.dbtn{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:600;background:var(--bg3);color:var(--muted);transition:var(--tr)}
+.dbtn.active{background:var(--saffron-dim);color:var(--saffron);border:1px solid rgba(255,153,51,.25)}
+.toast{position:fixed;top:70px;left:50%;transform:translateX(-50%);padding:9px 20px;border-radius:6px;background:rgba(255,153,51,.9);color:#fff;font-size:.82rem;font-weight:600;z-index:9999;animation:fadeUp .3s ease}
+footer{padding:28px 18px;text-align:center;border-top:1px solid rgba(255,255,255,.03);position:relative;z-index:1}
+footer p{color:var(--muted);font-size:.78rem}
+footer .creator{font-family:var(--font-d);font-weight:600;font-size:.9rem;background:linear-gradient(90deg,var(--saffron),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:2px}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{position:fixed;top:0;right:-100%;width:240px;height:100vh;background:var(--bg2);flex-direction:column;padding:65px 18px 18px;transition:var(--tr);z-index:999;border-left:1px solid rgba(255,255,255,.05)}.nav-links.open{right:0}.nav-links .nb{width:100%;text-align:left;padding:9px 12px}.counters{grid-template-columns:repeat(2,1fr)}.cgrid{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr}.scst-grid{grid-template-columns:1fr}.sbar{min-width:100%}.dash-hd{flex-direction:column}}
+@media(max-width:400px){.counters{gap:8px}.cc-n{font-size:1.5rem}.cta{flex-direction:column;width:100%}.cta button{width:100%}}
 :focus-visible{outline:2px solid var(--saffron);outline-offset:2px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
-<div id="loading-screen"><div class="loader-ring"></div><div class="loader-text">Loading 1000 Questions...</div></div>
-<canvas id="particles-canvas"></canvas>
-<svg id="india-map" viewBox="0 0 400 480" fill="none"><path d="M200 10 L220 30 L260 40 L290 55 L300 90 L320 100 L315 120 L340 170 L355 240 L340 260 L350 275 L335 290 L340 310 L310 360 L270 410 L240 440 L200 460 L160 440 L120 395 L70 345 L60 310 L50 275 L45 240 L50 200 L60 170 L70 135 L80 100 L100 90 L115 75 L130 40 L180 25Z" fill="rgba(255,153,51,0.6)" stroke="rgba(255,153,51,0.3)" stroke-width="1"/></svg>
-<canvas id="confetti-canvas"></canvas>
-<nav id="main-nav">
-<div class="nav-brand" onclick="showScreen('home')">Modi Quiz</div>
+<div id="load-screen"><div class="spin-ring"></div><div class="load-txt">Loading 800 Questions...</div></div>
+<canvas id="bg-c"></canvas>
+<nav>
+<div class="nav-brand" onclick="go('home')">Modi Quiz</div>
 <div class="nav-links" id="nav-links">
-<button class="nav-btn active" onclick="showScreen('home')" data-screen="home"><i class="fas fa-home"></i> Home</button>
-<button class="nav-btn" onclick="showScreen('dashboard')" data-screen="dashboard"><i class="fas fa-th-large"></i> Categories</button>
-<button class="nav-btn" onclick="showScreen('bookmarks')" data-screen="bookmarks"><i class="fas fa-bookmark"></i> Bookmarks</button>
-<button class="nav-btn" onclick="showScreen('leaderboard')" data-screen="leaderboard"><i class="fas fa-trophy"></i> Leaderboard</button>
-<button class="nav-btn" onclick="openSettings()"><i class="fas fa-cog"></i> Settings</button>
-<button class="icon-btn" onclick="toggleTheme()" title="Toggle theme"><i class="fas fa-moon" id="theme-icon"></i></button>
-<button class="icon-btn" onclick="toggleSound()" title="Toggle sound"><i class="fas fa-volume-up" id="sound-icon"></i></button>
+<button class="nb active" onclick="go('home')" data-s="home"><i class="fas fa-home"></i> Home</button>
+<button class="nb" onclick="go('dashboard')" data-s="dashboard"><i class="fas fa-th-large"></i> Categories</button>
+<button class="nb" onclick="go('bookmarks')" data-s="bookmarks"><i class="fas fa-bookmark"></i> Bookmarks</button>
+<button class="nb" onclick="go('leaderboard')" data-s="leaderboard"><i class="fas fa-trophy"></i> Leaderboard</button>
+<button class="nb" onclick="openSet()"><i class="fas fa-cog"></i> Settings</button>
+<button class="ib" onclick="togTheme()" title="Toggle theme"><i class="fas fa-moon" id="theme-ico"></i></button>
+<button class="ib" onclick="togSound()" title="Toggle sound"><i class="fas fa-volume-up" id="sound-ico"></i></button>
 </div>
-<button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+<button class="hamburger" onclick="togMenu()"><span></span><span></span><span></span></button>
 </nav>
-<section id="screen-home" class="screen active">
+
+<section id="s-home" class="screen active">
 <div class="hero">
-<div class="float-cards"><div class="float-card"><i class="fas fa-landmark"></i> Parliament</div><div class="float-card"><i class="fas fa-rocket"></i> Gaganyaan</div><div class="float-card"><i class="fas fa-indian-rupee-sign"></i> UPI</div><div class="float-card"><i class="fas fa-shield-halved"></i> Defence</div><div class="float-card"><i class="fas fa-solar-panel"></i> Solar</div><div class="float-card"><i class="fas fa-train"></i> Vande Bharat</div></div>
-<div class="hero-badge"><i class="fas fa-circle" style="font-size:.5rem"></i> 2014 — 2026</div>
+<div class="hero-badge"><i class="fas fa-circle" style="font-size:.45rem"></i> 2014 — 2026</div>
 <h1 class="hero-title">12 Years of<br><span class="hl">Transformative Governance</span></h1>
-<p class="hero-sub">Explore the major achievements, reforms, diplomacy milestones, infrastructure growth, welfare schemes, and national initiatives through an immersive interactive quiz experience.</p>
-<div style="margin-bottom:18px;font-size:1rem;color:var(--muted)"><span id="typing-text"></span></div>
-<div class="counters-row">
-<div class="counter-card"><div class="counter-num" data-target="1000">0</div><div class="counter-label">Questions</div></div>
-<div class="counter-card"><div class="counter-num" data-target="20">0</div><div class="counter-label">Categories</div></div>
-<div class="counter-card"><div class="counter-num" data-target="12">0</div><div class="counter-label">Years</div></div>
-<div class="counter-card"><div class="counter-num" data-target="999">0</div><div class="counter-label">Learning</div></div>
+<p class="hero-sub">Explore the major achievements, reforms, diplomacy milestones, infrastructure growth, welfare schemes, and national initiatives through an interactive quiz.</p>
+<div class="counters">
+<div class="cc"><div class="cc-n" data-t="800">0</div><div class="cc-l">Questions</div></div>
+<div class="cc"><div class="cc-n" data-t="20">0</div><div class="cc-l">Categories</div></div>
+<div class="cc"><div class="cc-n" data-t="12">0</div><div class="cc-l">Years</div></div>
+<div class="cc"><div class="cc-n" data-t="999">0</div><div class="cc-l">Learning</div></div>
 </div>
-<div class="cta-group">
-<button class="btn-p" onclick="startQuiz('random')"><i class="fas fa-play"></i> Start Random Quiz</button>
-<button class="btn-s" onclick="showScreen('dashboard')"><i class="fas fa-th-large"></i> Browse Categories</button>
+<div class="cta">
+<button class="btn-p" onclick="startQ('random')"><i class="fas fa-play"></i> Start Random Quiz</button>
+<button class="btn-s" onclick="go('dashboard')"><i class="fas fa-th-large"></i> Browse Categories</button>
 </div>
-<div class="portal-section">
-<a href="https://viksit-bharat-governance.netlify.app/" target="_blank" rel="noopener" class="portal-btn"><i class="fas fa-external-link-alt"></i> Explore Viksit Bharat Governance Portal</a>
-<p class="portal-desc">A unique digital governance showcase integrating multiple thematic sub-websites into one immersive national development experience.<br><br>Designed to present governance transformation, innovation, citizen-centric reforms, and India's rise through interactive storytelling.</p>
+<div style="max-width:560px;width:100%;margin-bottom:20px">
+<a href="https://viksit-bharat-governance.netlify.app/" target="_blank" rel="noopener" class="portal-a"><i class="fas fa-external-link-alt"></i> Explore Viksit Bharat Governance Portal</a>
+<p class="portal-desc">A unique digital governance showcase integrating multiple thematic sub-websites into one immersive national development experience.</p>
 </div>
-<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
 </div>
 </section>
-<section id="screen-dashboard" class="screen"><div class="dashboard">
-<div class="dash-header"><div><h2 class="section-title">Quiz Categories</h2><p class="section-desc">Choose a category or start a custom quiz</p></div><div class="search-bar"><i class="fas fa-search"></i><input type="text" id="search-input" placeholder="Search questions..." oninput="searchQ(this.value)" aria-label="Search"></div></div>
-<div class="daily-card"><div style="display:flex;align-items:center;gap:12px"><div class="daily-icon"><i class="fas fa-bolt"></i></div><div class="daily-text"><h4>Daily Challenge</h4><p>10 random questions — beat your best!</p></div></div><button class="btn-p btn-sm" onclick="startQuiz('daily')"><i class="fas fa-bolt"></i> Play</button></div>
-<div class="cta-group" style="justify-content:flex-start;margin-bottom:22px"><button class="btn-s btn-sm" onclick="startQuiz('random')"><i class="fas fa-shuffle"></i> Random 20</button><button class="btn-s btn-sm" onclick="startQuiz('timed')"><i class="fas fa-clock"></i> Timed</button><button class="btn-s btn-sm" onclick="startQuiz('practice')"><i class="fas fa-graduation-cap"></i> Practice</button></div>
-<div class="cat-grid" id="cat-grid"></div>
-<div class="scst-section"><div class="scst-badge"><i class="fas fa-star"></i> Special Section</div><h2 class="scst-title">SC/ST Welfare & Empowerment</h2><p class="scst-desc">Dedicated section covering all major schemes, initiatives, and welfare programs for Scheduled Caste and Scheduled Tribe communities during 2014-2026.</p><div class="scst-schemes" id="scst-schemes"></div><div style="margin-top:20px"><button class="btn-p" onclick="startQuiz('scst')"><i class="fas fa-play"></i> Take SC/ST Quiz</button></div></div>
+
+<section id="s-dashboard" class="screen"><div class="dash">
+<div class="dash-hd"><div><h2 class="stitle">Quiz Categories</h2><p class="sdesc">Choose a category or start a custom quiz</p></div><div class="sbar"><i class="fas fa-search"></i><input type="text" id="search-in" placeholder="Search questions..." oninput="searchQ(this.value)" aria-label="Search"></div></div>
+<div class="daily"><div style="display:flex;align-items:center;gap:10px"><div class="daily-icon"><i class="fas fa-bolt"></i></div><div><h4>Daily Challenge</h4><p>10 random questions — beat your best!</p></div></div><button class="btn-p btn-sm" onclick="startQ('daily')"><i class="fas fa-bolt"></i> Play</button></div>
+<div class="cta" style="justify-content:flex-start;margin-bottom:18px"><button class="btn-s btn-sm" onclick="startQ('random')"><i class="fas fa-shuffle"></i> Random 20</button><button class="btn-s btn-sm" onclick="startQ('timed')"><i class="fas fa-clock"></i> Timed</button><button class="btn-s btn-sm" onclick="startQ('practice')"><i class="fas fa-graduation-cap"></i> Practice</button></div>
+<div class="cgrid" id="cat-grid"></div>
+<div class="scst"><div class="scst-badge"><i class="fas fa-star"></i> Special Section</div><h2 class="scst-title">SC/ST Welfare & Empowerment</h2><p class="scst-desc">Dedicated section covering all major schemes, initiatives, and welfare programs for Scheduled Caste and Scheduled Tribe communities during 2014-2026.</p><div class="scst-grid" id="scst-grid"></div><div style="margin-top:16px"><button class="btn-p" onclick="startQ('scst')"><i class="fas fa-play"></i> Take SC/ST Quiz</button></div></div>
 </div></section>
-<section id="screen-quiz" class="screen"><div class="quiz-screen">
-<div class="quiz-top-bar"><div class="quiz-info"><div class="quiz-info-item"><i class="fas fa-list-ol"></i> <span class="val" id="q-current">1</span>/<span id="q-total">20</span></div><div class="quiz-info-item"><i class="fas fa-check-circle" style="color:var(--success)"></i> <span class="val" id="q-correct">0</span></div><div class="quiz-info-item"><i class="fas fa-fire" style="color:var(--saffron)"></i> <span class="val" id="q-streak">0</span></div></div><div class="quiz-timer" id="quiz-timer" style="display:none">00:00</div><button class="btn-xs" style="color:var(--danger)" onclick="endQuiz()"><i class="fas fa-times"></i> End</button></div>
-<div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill" style="width:0%"></div></div>
-<div class="q-card" id="q-card"></div>
-<div class="quiz-nav"><button class="bookmark-btn" id="bookmark-btn" onclick="toggleBm()"><i class="far fa-bookmark"></i> Bookmark</button><button class="btn-p btn-sm" id="next-btn" onclick="nextQ()" style="display:none"><i class="fas fa-arrow-right"></i> Next</button></div>
+
+<section id="s-quiz" class="screen"><div class="qwrap">
+<div class="qtop"><div class="qinfo"><div class="qinfo-i"><i class="fas fa-list-ol"></i> <span class="v" id="q-cur">1</span>/<span id="q-tot">20</span></div><div class="qinfo-i"><i class="fas fa-check-circle" style="color:var(--success)"></i> <span class="v" id="q-cor">0</span></div><div class="qinfo-i"><i class="fas fa-fire" style="color:var(--saffron)"></i> <span class="v" id="q-str">0</span></div></div><div class="qtimer" id="qtimer" style="display:none">00:00</div><button class="btn-sm" style="color:var(--danger)" onclick="endQ()"><i class="fas fa-times"></i> End</button></div>
+<div class="qprog"><div class="qprog-f" id="qprog-f" style="width:0%"></div></div>
+<div class="qcard" id="qcard"></div>
+<div class="qnav"><button class="bm-btn" id="bm-btn" onclick="togBm()"><i class="far fa-bookmark"></i> Bookmark</button><button class="btn-p btn-sm" id="reveal-btn" onclick="revealAns()"><i class="fas fa-eye"></i> Show Answer</button><button class="btn-p btn-sm" id="next-btn" onclick="nextQ()" style="display:none"><i class="fas fa-arrow-right"></i> Next</button></div>
 </div></section>
-<section id="screen-results" class="screen"><div class="results-screen"><div class="results-card">
-<div class="score-circle"><svg viewBox="0 0 200 200"><circle class="bg" cx="100" cy="100" r="85"/><circle class="fg" id="score-arc" cx="100" cy="100" r="85" stroke-dasharray="534" stroke-dashoffset="534"/></svg><div class="score-text"><div class="score-num" id="result-score">0</div><div class="score-label" id="result-pct">0%</div></div></div>
-<h2 class="results-title" id="results-title">Quiz Complete!</h2><p class="results-subtitle" id="results-subtitle">Great effort!</p>
-<div class="badges-row" id="badges-row"></div>
-<div class="stats-grid"><div class="stat-item"><div class="stat-val" style="color:var(--success)" id="stat-correct">0</div><div class="stat-label">Correct</div></div><div class="stat-item"><div class="stat-val" style="color:var(--danger)" id="stat-wrong">0</div><div class="stat-label">Wrong</div></div><div class="stat-item"><div class="stat-val" style="color:var(--cyan)" id="stat-streak">0</div><div class="stat-label">Best Streak</div></div></div>
-<div class="results-actions"><button class="btn-p btn-sm" onclick="reviewAns()"><i class="fas fa-eye"></i> Review</button><button class="btn-s btn-sm" onclick="genCert()"><i class="fas fa-certificate"></i> Certificate</button><button class="btn-s btn-sm" onclick="shareRes()"><i class="fas fa-share-alt"></i> Share</button><button class="btn-s btn-sm" onclick="showScreen('dashboard')"><i class="fas fa-th-large"></i> Categories</button></div>
+
+<section id="s-results" class="screen"><div class="rwrap"><div class="rcard">
+<div class="score-c"><svg viewBox="0 0 200 200"><circle class="bg" cx="100" cy="100" r="85"/><circle class="fg" id="score-arc" cx="100" cy="100" r="85" stroke-dasharray="534" stroke-dashoffset="534"/></svg><div class="st"><div class="sn" id="r-score">0</div><div class="sl" id="r-pct">0%</div></div></div>
+<h2 class="r-title" id="r-title">Quiz Complete!</h2><p class="r-sub" id="r-sub">Great effort!</p>
+<div class="sgrid"><div class="si"><div class="si-v" style="color:var(--success)" id="s-cor">0</div><div class="si-l">Correct</div></div><div class="si"><div class="si-v" style="color:var(--danger)" id="s-wrn">0</div><div class="si-l">Wrong</div></div><div class="si"><div class="si-v" style="color:var(--cyan)" id="s-str">0</div><div class="si-l">Best Streak</div></div></div>
+<div class="ract"><button class="btn-p btn-sm" onclick="reviewA()"><i class="fas fa-eye"></i> Review</button><button class="btn-s btn-sm" onclick="genCert()"><i class="fas fa-certificate"></i> Certificate</button><button class="btn-s btn-sm" onclick="shareR()"><i class="fas fa-share-alt"></i> Share</button><button class="btn-s btn-sm" onclick="go('dashboard')"><i class="fas fa-th-large"></i> Categories</button></div>
 </div></div></section>
-<section id="screen-review" class="screen"><div class="review-screen"><h2 class="section-title">Review Answers</h2><p class="section-desc">Learn from explanations</p><div id="review-list"></div><div style="text-align:center;margin-top:20px"><button class="btn-p btn-sm" onclick="showScreen('results')"><i class="fas fa-arrow-left"></i> Back</button></div></div></section>
-<section id="screen-bookmarks" class="screen"><div class="bookmarks-screen"><h2 class="section-title">Bookmarked Questions</h2><p class="section-desc">Your saved questions</p><div id="bookmark-list"></div><div id="no-bookmarks" style="text-align:center;padding:40px 0;color:var(--muted)"><i class="fas fa-bookmark" style="font-size:2rem;margin-bottom:10px;display:block;opacity:.3"></i>No bookmarks yet.</div></div></section>
-<section id="screen-leaderboard" class="screen"><div class="leaderboard-screen"><h2 class="section-title">Leaderboard</h2><p class="section-desc">Top performers</p><div id="lb-list"></div></div></section>
-<section id="screen-certificate" class="screen"><div class="certificate-screen"><div class="cert-frame"><div class="cert-title">Certificate of Achievement</div><div class="cert-body">This certifies that<div class="cert-name" id="cert-name">Quiz Champion</div>has completed the<strong style="color:var(--saffron)"> 12 Years of Transformative Governance Quiz</strong> scoring <strong id="cert-score" style="color:var(--cyan)">0%</strong></div><div style="font-size:.75rem;color:var(--dim)" id="cert-date"></div></div><div style="text-align:center;margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn-p btn-sm" onclick="exportCert()"><i class="fas fa-download"></i> Download</button><button class="btn-s btn-sm" onclick="showScreen('results')"><i class="fas fa-arrow-left"></i> Back</button></div></div></section>
-<section id="screen-search" class="screen"><div class="dashboard"><h2 class="section-title">Search Results</h2><p class="section-desc" id="search-desc">Results</p><div id="search-results" class="search-results-grid"></div><div style="margin-top:20px"><button class="btn-s btn-sm" onclick="showScreen('dashboard')"><i class="fas fa-arrow-left"></i> Back</button></div></div></section>
-<div class="modal-overlay" id="settings-modal"><div class="modal">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><h3 class="modal-title" style="margin:0">Settings</h3><button class="icon-btn" onclick="closeSettings()"><i class="fas fa-times"></i></button></div>
-<div class="setting-row"><span class="setting-label">Dark Mode</span><div class="toggle on" id="toggle-theme" onclick="toggleTheme()"></div></div>
-<div class="setting-row"><span class="setting-label">Sound Effects</span><div class="toggle on" id="toggle-sound" onclick="toggleSound()"></div></div>
-<div class="setting-row"><span class="setting-label">Questions/Quiz</span><div class="diff-btns"><button class="diff-btn" onclick="setQC(10,this)">10</button><button class="diff-btn active" onclick="setQC(20,this)">20</button><button class="diff-btn" onclick="setQC(50,this)">50</button></div></div>
-<div class="setting-row" style="border:none"><span class="setting-label">Reset Progress</span><button class="btn-xs" style="color:var(--danger);border:1px solid rgba(248,81,73,.3)" onclick="resetProg()">Reset</button></div>
+
+<section id="s-review" class="screen"><div class="rewrap"><h2 class="stitle">Review Answers</h2><p class="sdesc">Learn from your attempts</p><div id="rev-list"></div><div style="text-align:center;margin-top:16px"><button class="btn-p btn-sm" onclick="go('results')"><i class="fas fa-arrow-left"></i> Back</button></div></div></section>
+
+<section id="s-bookmarks" class="screen"><div class="bmwrap"><h2 class="stitle">Bookmarked Questions</h2><p class="sdesc">Your saved questions</p><div id="bm-list"></div><div id="no-bm" style="text-align:center;padding:36px 0;color:var(--muted)"><i class="fas fa-bookmark" style="font-size:2rem;margin-bottom:8px;display:block;opacity:.25"></i>No bookmarks yet.</div></div></section>
+
+<section id="s-leaderboard" class="screen"><div class="lbwrap"><h2 class="stitle">Leaderboard</h2><p class="sdesc">Top performers</p><div id="lb-list"></div></div></section>
+
+<section id="s-certificate" class="screen"><div class="certwrap"><div class="cert-f"><div class="cert-t">Certificate of Achievement</div><div class="cert-b">This certifies that<div class="cert-n" id="cert-name">Quiz Champion</div>has completed the<strong style="color:var(--saffron)"> 12 Years of Transformative Governance Quiz</strong> scoring <strong id="cert-sc" style="color:var(--cyan)">0%</strong></div><div style="font-size:.7rem;color:var(--dim)" id="cert-dt"></div></div><div style="text-align:center;margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn-p btn-sm" onclick="expCert()"><i class="fas fa-download"></i> Download</button><button class="btn-s btn-sm" onclick="go('results')"><i class="fas fa-arrow-left"></i> Back</button></div></div></section>
+
+<section id="s-search" class="screen"><div class="dash"><h2 class="stitle">Search Results</h2><p class="sdesc" id="sr-desc">Results</p><div id="sr-list" style="display:grid;gap:10px"></div><div style="margin-top:16px"><button class="btn-s btn-sm" onclick="go('dashboard')"><i class="fas fa-arrow-left"></i> Back</button></div></div></section>
+
+<div class="modal-ov" id="set-modal"><div class="modal">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h3 class="modal-t" style="margin:0">Settings</h3><button class="ib" onclick="closeSet()"><i class="fas fa-times"></i></button></div>
+<div class="srow"><span class="srow-l">Dark Mode</span><div class="tog on" id="tog-theme" onclick="togTheme()"></div></div>
+<div class="srow"><span class="srow-l">Sound Effects</span><div class="tog on" id="tog-sound" onclick="togSound()"></div></div>
+<div class="srow"><span class="srow-l">Questions/Quiz</span><div class="dbtns"><button class="dbtn" onclick="setQC(10,this)">10</button><button class="dbtn active" onclick="setQC(20,this)">20</button><button class="dbtn" onclick="setQC(50,this)">50</button></div></div>
+<div class="srow" style="border:none"><span class="srow-l">Reset Progress</span><button class="btn-sm" style="color:var(--danger);border:1px solid rgba(248,81,73,.25)" onclick="resetP()">Reset</button></div>
 </div></div>
-<div class="fact-bar" id="fact-bar"><i class="fas fa-lightbulb"></i><span id="fact-text"></span><div class="fact-close" onclick="hideFact()"><i class="fas fa-times"></i></div></div>
+
 <footer><p>Created by</p><p class="creator">Kallol Chakrabarti</p></footer>
+
 <script>
-// ==================== 1000 QUESTIONS DATABASE ====================
-// Format: {c:category, q:question, a:answer, e:explanation}
-// Options are auto-generated from other answers in the same category
+// ==================== 800 QUESTIONS ====================
+// [categoryId, "question", "answer"]
 const CATS=[
 {id:"foreign",name:"Foreign Affairs & Diplomacy",icon:"fa-globe",color:"#FF9933"},
 {id:"security",name:"Internal Security",icon:"fa-shield-halved",color:"#f85149"},
@@ -283,78 +238,64 @@ const CATS=[
 {id:"covid",name:"Covid Management",icon:"fa-virus",color:"#ff6b9d"},
 {id:"scst",name:"SC/ST Welfare Schemes",icon:"fa-hand-holding-heart",color:"#138808"}
 ];
-const SCST_SCHEMES=["Stand Up India","Venture Capital Fund for SC","PM Adi Adarsh Gram Yojana","National Fellowship for SC","National Fellowship for ST","Eklavya Model Residential Schools","Post-Matric Scholarship SC","Pre-Matric Scholarship SC/ST","PM Van Dhan Yojana","Tribal Sub-Plan","SC Special Central Assistance","National Overseas Scholarship SC","Rajiv Gandhi National Fellowship","PM JANMAN Mission","Forest Rights Act Implementation","Tribal Freedom Fighters Museum","PM Anusuchit Jaati Abhyuday Yojana","SC/ST Hostel Scheme","Vanbandhu Kalyan Yojana","Aspirational Districts Programme","PM Sahayata Yojana","Dr. Ambedkar Centres","Venture Capital Fund for ST","Special Entrepreneurship Programme","PM Ujjwala Yojana SC/ST Priority"];
-const DB=[
-// ===== FOREIGN AFFAIRS (50) =====
-{c:"foreign",q:"Which country did PM Modi visit first after assuming office in 2014?",a:"Bhutan",e:"PM Modi chose Bhutan as his first foreign visit, reinforcing the Neighbourhood First policy."},
-{c:"foreign",q:"What is India's proactive policy focusing on neighbouring countries under PM Modi?",a:"Neighbourhood First Policy",e:"This policy prioritizes strengthening relations with immediate neighbours for regional stability."},
-{c:"foreign",q:"India became a full member of SCO in which year?",a:"2017",e:"India joined the Shanghai Cooperation Organisation as a full member in 2017."},
-{c:"foreign",q:"The 2+2 Dialogue with USA involves EAM and RM plus which US counterparts?",a:"Secretary of State and Secretary of Defense",e:"The 2+2 format deepens strategic partnership between India and the USA."},
-{c:"foreign",q:"BBIN Motor Vehicles Agreement connects which countries?",a:"Bangladesh, Bhutan, India, Nepal",e:"BBIN enables seamless movement of passenger and cargo vehicles across borders."},
-{c:"foreign",q:"Act East Policy replaced which earlier policy?",a:"Look East Policy",e:"Act East Policy (2014) upgraded Look East to actively engage with Southeast Asia."},
-{c:"foreign",q:"The International Solar Alliance was co-founded by India and which country?",a:"France",e:"ISA was jointly launched by India and France at COP21 in Paris in 2015."},
-{c:"foreign",q:"India signed CEPA with UAE in which year?",a:"2022",e:"The Comprehensive Economic Partnership Agreement with UAE was signed in February 2022."},
-{c:"foreign",q:"The Howdy Modi event was held in which US city?",a:"Houston",e:"Over 50,000 people attended the Howdy Modi event at NRG Stadium in Houston in September 2019."},
-{c:"foreign",q:"India helped construct a new parliament building for which neighbour?",a:"Maldives",e:"India funded the construction of the new Maldives Parliament building as a friendship gesture."},
-{c:"foreign",q:"Which corridor connects India to Russia via Central Asia?",a:"International North-South Transport Corridor",e:"INSTC is a 7,200 km multi-mode network connecting India to Russia via Iran and Central Asia."},
-{c:"foreign",q:"PM Modi addressed the UNGA for the first time in which year?",a:"2014",e:"PM Modi's first UNGA address in September 2014 emphasized global peace and cooperation."},
-{c:"foreign",q:"India and Bangladesh signed the Land Boundary Agreement in which year?",a:"2015",e:"The LBA resolved a 41-year-old border dispute, exchanging 162 enclaves between the two nations."},
-{c:"foreign",q:"What is the name of India-Japan special strategic partnership launched in 2014?",a:"Special Strategic and Global Partnership",e:"India and Japan elevated ties to this level during PM Modi's visit to Tokyo in 2014."},
-{c:"foreign",q:"The Chabahar Port is located in which country?",a:"Iran",e:"India is developing the Chabahar Port in Iran to bypass Pakistan and access Afghanistan and Central Asia."},
-{c:"foreign",q:"India signed the civil nuclear agreement with Japan in which year?",a:"2016",e:"The agreement enabled Japanese nuclear technology companies to participate in India's nuclear programme."},
-{c:"foreign",q:"Which ASEAN country did PM Modi visit first?",a:"Myanmar",e:"PM Modi visited Myanmar in 2014, strengthening India's Act East outreach."},
-{c:"foreign",q:"The India-Myanmar-Thailand Trilateral Highway connects which regions?",a:"Moreh to Mae Sot",e:"The highway connects Moreh in India to Mae Sot in Thailand via Myanmar, boosting regional connectivity."},
-{c:"foreign",q:"What is the name of India's initiative for Indian Ocean Region cooperation?",a:"SAGAR",e:"SAGAR (Security and Growth for All in the Region) is India's strategic vision for the Indian Ocean."},
-{c:"foreign",q:"India joined the Australia Group in which year?",a:"2018",e:"India joined the Australia Group, a non-proliferation regime against chemical and biological weapons."},
-{c:"foreign",q:"The Wuhan Summit between PM Modi and President Xi was held in which year?",a:"2018",e:"The informal Wuhan Summit reset India-China relations after the Doklam standoff."},
-{c:"foreign",q:"India signed the COMCASA agreement with which country?",a:"USA",e:"COMCASA (Communications Compatibility and Security Agreement) enables secure defense communications sharing."},
-{c:"foreign",q:"PM Modi visited Israel in which year, the first by an Indian PM?",a:"2017",e:"PM Modi's 2017 Israel visit was historic, marking the first by an Indian Prime Minister."},
-{c:"foreign",q:"India opened its embassy in which Pacific nation in 2023?",a:"Fiji",e:"India strengthened Pacific Islands engagement through new diplomatic missions and Forum for India-Pacific Islands Cooperation."},
-{c:"foreign",q:"Which agreement enhanced India-France strategic cooperation in 2018?",a:"Reciprocal Logistics Support Agreement",e:"The RLSA enables mutual logistics support between Indian and French armed forces."},
-{c:"foreign",q:"India became a member of the MTCR in which year?",a:"2016",e:"India joined the Missile Technology Control Regime, gaining access to advanced missile technology."},
-{c:"foreign",q:"The Mahatma Gandhi statue was unveiled at which UN location?",a:"UN Headquarters, New York",e:"PM Modi unveiled a bust of Mahatma Gandhi at the UN Headquarters in 2019."},
-{c:"foreign",q:"Which agreement with Bangladesh settled the maritime boundary?",a:"2014 Permanent Court of Arbitration Award",e:"The PCA award settled the maritime boundary, enabling cooperation in the Bay of Bengal."},
-{c:"foreign",q:"India signed BECA with which country?",a:"USA",e:"BECA (Basic Exchange and Cooperation Agreement) enables geospatial intelligence sharing."},
-{c:"foreign",q:"The Varanasi-Dhaka direct flight was inaugurated in which year?",a:"2018",e:"Direct connectivity between Varanasi and Dhaka boosted cultural and business ties."},
-{c:"foreign",q:"PM Modi addressed the British Parliament in which year?",a:"2015",e:"PM Modi became the first Indian PM to address the British Parliament in November 2015."},
-{c:"foreign",q:"Which Indian Ocean island nation received a Dornier aircraft from India?",a:"Seychelles",e:"India gifted a Dornier aircraft to Seychelles for maritime surveillance under security cooperation."},
-{c:"foreign",q:"India signed a nuclear cooperation agreement with Australia in which year?",a:"2014",e:"The civil nuclear cooperation agreement enabled Australian uranium supply to India."},
-{c:"foreign",q:"What was the name of PM Modi's 2015 visit to Silicon Valley?",a:"Digital India Dinner",e:"PM Modi met top tech CEOs in Silicon Valley to promote Digital India and investment."},
-{c:"foreign",q:"India became a member of the Wassenaar Arrangement in which year?",a:"2017",e:"India joined the Wassenaar Arrangement on export controls for conventional arms and dual-use goods."},
-{c:"foreign",q:"The Kartarpur Corridor was opened between India and which country?",a:"Pakistan",e:"The corridor allows Indian pilgrims visa-free access to Gurdwara Kartarpur Sahib in Pakistan."},
-{c:"foreign",q:"India contributed how much to the UN Partnership Development Fund?",a:"$100 million",e:"India committed $100 million over 10 years to support UN development projects in developing countries."},
-{c:"foreign",q:"PM Modi and President Xi held their second informal summit in which city?",a:"Mamallapuram",e:"The 2019 informal summit in Mamallapuram, Tamil Nadu focused on managing bilateral differences."},
-{c:"foreign",q:"India signed a Comprehensive Strategic Partnership with which Arab nation in 2022?",a:"Saudi Arabia",e:"The partnership with Saudi Arabia covers energy, defence, trade, and technology cooperation."},
-{c:"foreign",q:"Which neighbour saw India's largest Single Point Injection aid during COVID?",a:"Nepal",e:"India provided significant medical and vaccine assistance to Nepal during the pandemic."},
-{c:"foreign",q:"India-Qatar relationship was elevated to Strategic Partnership in which year?",a:"2015",e:"The partnership covers energy security, trade, investment, and labour welfare of Indians in Qatar."},
-{c:"foreign",q:"What is the name of the India-UN Capacity Building Partnership?",a:"India-UN Development Partnership Fund",e:"The fund supports South-South cooperation projects in developing countries."},
-{c:"foreign",q:"India established a Strategic Partnership with which Nordic nation in 2019?",a:"Denmark",e:"The Green Strategic Partnership with Denmark focuses on renewable energy and sustainable development."},
-{c:"foreign",q:"The Colombo Security Conclave includes India, Sri Lanka, and which other nation?",a:"Maldives",e:"The maritime security initiative was expanded to include Mauritius and Seychelles as observers."},
-{c:"foreign",q:"India contributed how many troops to UN peacekeeping as of 2024?",a:"Over 5,000",e:"India is among the top troop-contributing nations to UN peacekeeping operations."},
-{c:"foreign",q:"Which agreement upgraded India-Japan civil nuclear cooperation?",a:"Agreement for Cooperation in the Peaceful Uses of Nuclear Energy",e:"Signed in 2016, it enables Japanese companies to supply nuclear technology and equipment to India."},
-{c:"foreign",q:"PM Modi received the Order of the Distinguished Rule of Nishan Izzuddin from which nation?",a:"Maldives",e:"This is the highest honour awarded to foreign dignitaries by the Maldives."},
-{c:"foreign",q:"India and Vietnam signed a Joint Vision Statement on Defence Partnership in which year?",a:"2022",e:"The vision statement covers maritime cooperation, defence industry, and capacity building."},
-{c:"foreign",q:"Which country did PM Modi visit first after re-election in 2019?",a:"Maldives",e:"PM Modi chose the Maldives as his first foreign visit after the 2019 election, signalling neighbourhood priority."},
-{c:"foreign",q:"India-EU Strategic Partnership was renewed during which summit?",a:"2020 Virtual Summit",e:"The 2020 India-EU summit adopted the EU-India Strategic Partnership Roadmap 2025."},
+const SCHEMES=["Stand Up India","Venture Capital Fund for SC","PM Adi Adarsh Gram Yojana","National Fellowship for SC","Eklavya Model Residential Schools","Post-Matric Scholarship SC","Pre-Matric Scholarship SC/ST","PM Van Dhan Yojana","Tribal Sub-Plan","SC Special Central Assistance","National Overseas Scholarship SC","PM JANMAN Mission","Forest Rights Act Implementation","Tribal Freedom Fighters Museum","PM Anusuchit Jaati Abhyuday Yojana","SC/ST Hostel Scheme","Vanbandhu Kalyan Yojana","Aspirational Districts Programme","Dr. Ambedkar Centres","Venture Capital Fund for ST","Special Entrepreneurship Programme","PM Ujjwala Yojana SC/ST Priority","PM Awas Yojana SC/ST Quota","National Commission for SC","National Commission for ST"];
 
-// ===== INTERNAL SECURITY (50) =====
-{c:"security",q:"India conducted surgical strikes across the LoC in which year?",a:"2016",e:"The surgical strikes on September 29, 2016 targeted terrorist launch pads in PoK."},
-{c:"security",q:"The Balakot airstrike was conducted in response to which attack?",a:"Pulwama attack",e:"The 2019 Balakot strike targeted a JeM camp after 40 CRPF personnel were killed in Pulwama."},
-{c:"security",q:"What is the name of India's integrated intelligence framework?",a:"NATGRID",e:"NATGRID connects databases of security agencies to strengthen counter-terrorism."},
-{c:"security",q:"Which operation evacuated Indian citizens from Afghanistan in 2021?",a:"Operation Devi Shakti",e:"The operation evacuated Indians and Afghan allies from Kabul after the Taliban takeover."},
-{c:"security",q:"UAPA was amended in which year to allow individual terrorist designation?",a:"2019",e:"The amendment allows the government to designate individuals as terrorists, not just organizations."},
-{c:"security",q:"How many new NIA branches were sanctioned under the Modi government?",a:"5",e:"Five new NIA offices expanded the agency's reach across India for faster terror probes."},
-{c:"security",q:"The National Police Memorial was dedicated to the nation in which year?",a:"2018",e:"PM Modi dedicated the National Police Memorial in New Delhi on Police Commemoration Day."},
-{c:"security",q:"What is the name of the integrated counter-radicalization programme?",a:"National Counter Radicalization Programme",e:"The programme focuses on preventing radicalization, especially among youth, through community engagement."},
-{c:"security",q:"Which paramilitary force was elevated to a Central Armed Police Force under PM Modi?",a:"SSB",e:"The Sashastra Seema Bal was designated as a border-guarding force for Nepal and Bhutan borders."},
-{c:"security",q:"The Citizenship Amendment Act was passed in which year?",a:"2019",e:"The CAA provides a path to Indian citizenship for persecuted minorities from Afghanistan, Bangladesh, and Pakistan."},
-{c:"security",q:"Operation All-Out was launched in which region?",a:"Jammu and Kashmir",e:"Operation All-Out was launched in 2017 to eliminate terrorists in Jammu and Kashmir."},
-{c:"security",q:"How many districts were covered under the Left Wing Extremism reduction programme?",a:"90",e:"The LWE programme covers 90 districts across 11 states with security and development interventions."},
-{c:"security",q:"The SMART policing initiative stands for what?",a:"Strict and Sensitive, Modern and Mobile, Alert and Accountable, Reliable and Responsive, Trained and Techno-savvy",e:"SMART policing aims to transform police forces into professional, people-friendly organizations."},
-{c:"security",q:"India's Coastal Surveillance Radar System was established under which ministry?",a:"Ministry of Home Affairs",e:"The radar system covers India's 7,516 km coastline to prevent maritime security threats."},
-{c:"security",q:"The National Intelligence Grid was operationalized in which year?",a:"2022",e:"NATGRID Phase-1 became operational, linking 11 databases for intelligence sharing."},
-{c:"security",q:"Which operation rescued Indians from Ukraine in 2022?",a:"Operation Ganga",e:"Operation Ganga evacuated over 18,000 Indian students from war-torn Ukraine."},
-{c:"security",q:"What is the full form of NIA?",a:"National Investigation Agency",e:"NIA is India's central agency for investigating terror-related and other scheduled offences."},
-{c:"security",q:"The J&K Reorganization Act was passed in which year?",a:"2019",e:"The act reorganized Jammu and Kashmir into two Union Territories: J&K and Ladakh."},
-{c:"security",q:"How many Maoist-affected districts have seen a reduction under the Modi government?",a:"Over 50",e:"More than 50 districts have seen significant reduction in LWE violence since 2014."},
-{c:"security",q:"The National
+const Q=[
+// ===== 0: FOREIGN AFFAIRS (40) =====
+[0,"Which country did PM Modi visit first after assuming office in 2014?","Bhutan"],
+[0,"What is India's proactive policy focusing on neighbouring countries called?","Neighbourhood First Policy"],
+[0,"India became a full member of SCO in which year?","2017"],
+[0,"The 2+2 Dialogue with USA involves which US counterparts?","Secretary of State and Secretary of Defense"],
+[0,"BBIN Motor Vehicles Agreement connects which countries?","Bangladesh, Bhutan, India, Nepal"],
+[0,"Act East Policy replaced which earlier policy?","Look East Policy"],
+[0,"The International Solar Alliance was co-founded by India and which country?","France"],
+[0,"India signed CEPA with UAE in which year?","2022"],
+[0,"The Howdy Modi event was held in which US city?","Houston"],
+[0,"India helped construct a new parliament building for which neighbour?","Maldives"],
+[0,"Which corridor connects India to Russia via Central Asia?","International North-South Transport Corridor"],
+[0,"PM Modi addressed the UNGA for the first time in which year?","2014"],
+[0,"India and Bangladesh signed the Land Boundary Agreement in which year?","2015"],
+[0,"What is the name of India-Japan special strategic partnership launched in 2014?","Special Strategic and Global Partnership"],
+[0,"The Chabahar Port is located in which country?","Iran"],
+[0,"India signed the civil nuclear agreement with Japan in which year?","2016"],
+[0,"Which ASEAN country did PM Modi visit first?","Myanmar"],
+[0,"The India-Myanmar-Thailand Trilateral Highway connects which regions?","Moreh to Mae Sot"],
+[0,"What is the name of India's initiative for Indian Ocean Region cooperation?","SAGAR"],
+[0,"India joined the Australia Group in which year?","2018"],
+[0,"The Wuhan Summit between PM Modi and President Xi was held in which year?","2018"],
+[0,"India signed the COMCASA agreement with which country?","USA"],
+[0,"PM Modi visited Israel in which year, the first by an Indian PM?","2017"],
+[0,"Which agreement enhanced India-France strategic cooperation in 2018?","Reciprocal Logistics Support Agreement"],
+[0,"India became a member of the MTCR in which year?","2016"],
+[0,"The Kartarpur Corridor was opened between India and which country?","Pakistan"],
+[0,"PM Modi and President Xi held their second informal summit in which city?","Mamallapuram"],
+[0,"India signed BECA with which country?","USA"],
+[0,"PM Modi addressed the British Parliament in which year?","2015"],
+[0,"India signed a nuclear cooperation agreement with Australia in which year?","2014"],
+[0,"India became a member of the Wassenaar Arrangement in which year?","2017"],
+[0,"India contributed how much to the UN Partnership Development Fund?","$100 million"],
+[0,"India established a Green Strategic Partnership with which Nordic nation in 2019?","Denmark"],
+[0,"The Colombo Security Conclave includes India, Sri Lanka, and which other nation?","Maldives"],
+[0,"Which country did PM Modi visit first after re-election in 2019?","Maldives"],
+[0,"India-Qatar relationship was elevated to Strategic Partnership in which year?","2015"],
+[0,"India signed a Comprehensive Strategic Partnership with Saudi Arabia in which year?","2022"],
+[0,"Which Indian Ocean island nation received a Dornier aircraft from India?","Seychelles"],
+[0,"PM Modi received the Order of the Distinguished Rule of Nishan Izzuddin from which nation?","Maldives"],
+[0,"India-EU Strategic Partnership was renewed during which summit?","2020 Virtual Summit"],
+
+// ===== 1: INTERNAL SECURITY (40) =====
+[1,"India conducted surgical strikes across the LoC in which year?","2016"],
+[1,"The Balakot airstrike was conducted in response to which attack?","Pulwama attack"],
+[1,"What is the name of India's integrated intelligence framework?","NATGRID"],
+[1,"Which operation evacuated Indian citizens from Afghanistan in 2021?","Operation Devi Shakti"],
+[1,"UAPA was amended in which year to allow individual terrorist designation?","2019"],
+[1,"How many new NIA branches were sanctioned under the Modi government?","5"],
+[1,"The National Police Memorial was dedicated to the nation in which year?","2018"],
+[1,"The Citizenship Amendment Act was passed in which year?","2019"],
+[1,"Operation All-Out was launched in which region?","Jammu and Kashmir"],
+[1,"How many districts were covered under the LWE reduction programme?","90"],
+[1,"Which operation rescued Indians from Ukraine in 2022?","Operation Ganga"],
+[1,"What is the full form of NIA?","National Investigation Agency"],
+[1,"The J&K Reorganization Act was passed in which year?","2019"],
+[1,"NATGRID Phase-1 became operational in which year?","2022"],
+[1,"How many Maoist-affected districts have seen a reduction under
