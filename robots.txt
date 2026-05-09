@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://helixoriginator.github.io/modi-governance-quiz/sitemap.xml
